@@ -16,7 +16,6 @@ export class DiscordButton extends LitElement {
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
-			margin: 4px 8px 4px 0;
 			padding: 2px 16px;
 			width: auto;
 			height: 32px;
@@ -28,7 +27,7 @@ export class DiscordButton extends LitElement {
 			transition:
 				background-color 0.17s ease,
 				color 0.17s ease;
-			border-radius: 3px;
+			border-radius: 8px;
 			font-size: 14px;
 			font-weight: 500;
 			line-height: 16px;

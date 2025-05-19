@@ -128,8 +128,8 @@ export class DiscordSystemMessage extends LitElement implements LightTheme {
 		}
 
 		:host([has-thread]):after {
-			width: 2rem;
-			left: 2.2rem;
+			width: 32px;
+			left: 35px;
 			top: 1.75rem;
 			border-left: 2px solid #4f545c !important;
 			border-bottom: 2px solid #4f545c !important;

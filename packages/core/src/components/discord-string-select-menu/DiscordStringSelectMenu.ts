@@ -27,7 +27,7 @@ export class DiscordStringSelectMenu extends LitElement implements LightTheme {
 			border-color: color-mix(in oklab, hsl(225 calc(1 * 6.3%) 12.5% / 1) 100%, black 0%);
 			padding: 8px !important;
 			width: 400px;
-			max-width: 400px;
+			max-width: 100%;
 			transition: border 0.2s ease;
 			font-weight: 500;
 		}

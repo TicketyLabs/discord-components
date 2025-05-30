@@ -207,7 +207,7 @@ export class DiscordMessage extends LitElement implements LightTheme {
 		}
 
 		:host(:hover) {
-			background-color: hsl(0 calc(1 * 0%) 0.8%/0.03);
+			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.0784314)
 		}
 
 		:host([highlight]:hover) {

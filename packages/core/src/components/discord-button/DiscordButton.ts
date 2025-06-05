@@ -16,7 +16,6 @@ export class DiscordButton extends LitElement {
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
-			margin: 4px 8px 4px 0;
 			padding: 2px 16px;
 			width: auto;
 			height: 32px;
@@ -28,7 +27,7 @@ export class DiscordButton extends LitElement {
 			transition:
 				background-color 0.17s ease,
 				color 0.17s ease;
-			border-radius: 3px;
+			border-radius: 8px;
 			font-size: 14px;
 			font-weight: 500;
 			line-height: 16px;
@@ -43,39 +42,39 @@ export class DiscordButton extends LitElement {
 		}
 
 		.success {
-			color: #fff;
-			background-color: #3ba55d;
+			color: rgb(255, 255, 255);
+			background-color: rgb(0, 134, 58);
 		}
 
 		.success.hoverable:hover {
-			background-color: #2d7d46;
+			background-color: rgb(4, 126, 55);
 		}
 
 		.destructive {
-			color: #fff;
-			background-color: #ed4245;
+			color: rgb(255, 255, 255);
+			background-color: rgb(210, 45, 57);
 		}
 
 		.destructive.hoverable:hover {
-			background-color: #c03537;
+			background-color: rgb(180, 40, 49);
 		}
 
 		.primary {
-			color: #fff;
-			background-color: #5865f2;
+			color: rgb(255, 255, 255);
+			background-color: rgb(88, 101, 242);
 		}
 
 		.primary.hoverable:hover {
-			background-color: #4752c4;
+			background-color: rgb(70, 84, 192);
 		}
 
 		.secondary {
-			color: #fff;
-			background-color: #4f545c;
+			color: rgb(235, 235, 237);
+			background-color: rgba(151, 151, 159, 0.12);
 		}
 
 		.secondary.hoverable:hover {
-			background-color: #5d6269;
+			background-color: rgba(151, 151, 159, 0.2);
 		}
 
 		.disabled {

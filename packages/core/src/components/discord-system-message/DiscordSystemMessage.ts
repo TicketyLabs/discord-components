@@ -120,7 +120,7 @@ export class DiscordSystemMessage extends LitElement implements LightTheme {
 		}
 
 		:host(:hover) {
-			background-color: rgba(4, 4, 5, 0.07);
+			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.0784314)
 		}
 
 		:host([light-theme]:hover) {
@@ -128,8 +128,8 @@ export class DiscordSystemMessage extends LitElement implements LightTheme {
 		}
 
 		:host([has-thread]):after {
-			width: 2rem;
-			left: 2.2rem;
+			width: 32px;
+			left: 35px;
 			top: 1.75rem;
 			border-left: 2px solid #4f545c !important;
 			border-bottom: 2px solid #4f545c !important;

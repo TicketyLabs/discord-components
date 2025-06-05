@@ -13,8 +13,8 @@ export class DiscordStringSelectMenu extends LitElement implements LightTheme {
 	 */
 	public static override readonly styles = css`
 		.discord-string-select-menu {
-			height: 36px;
-			min-height: 36px;
+			height: 44px;
+			min-height: 44px;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
@@ -22,13 +22,12 @@ export class DiscordStringSelectMenu extends LitElement implements LightTheme {
 			cursor: pointer;
 			color: color-mix(in oklab, hsl(210 calc(1 * 9.1%) 87.1% / 1) 100%, black 0%);
 			border: 1px solid;
-			border-radius: 4px;
+			border-radius: 8px;
 			background-color: color-mix(in oklab, hsl(225 calc(1 * 6.3%) 12.5% / 1) 100%, black 0%);
 			border-color: color-mix(in oklab, hsl(225 calc(1 * 6.3%) 12.5% / 1) 100%, black 0%);
 			padding: 8px !important;
-			width: 90%;
-			max-width: 400px;
-			margin-right: 16px;
+			width: 400px;
+			max-width: 100%;
 			transition: border 0.2s ease;
 			font-weight: 500;
 		}

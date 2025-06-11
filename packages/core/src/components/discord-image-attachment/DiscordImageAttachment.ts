@@ -79,12 +79,10 @@ export class DiscordImageAttachment extends LitElement {
 	 * If not provided, nothing will happen on error.
 	 */
 	@property({ attribute: false })
-	public onImageError?: (imgEl: HTMLImageElement) => void;
-
+	public accessor onImageError: (imgEl: HTMLImageElement) => void;
+	
 	private handleImageError(event: Event): void {
-		if (!this.onImageError) return;
-		const img = event.currentTarget as HTMLImageElement;
-		this.onImageError(img);
+		this.onImageError?.(event.currentTarget as HTMLImageElement);
 	}
 
 	public componentWillRender() {

@@ -118,12 +118,10 @@ export class DiscordCommand extends LitElement implements LightTheme {
 	 * If not provided, nothing will happen on error.
 	 */
 	@property({ attribute: false })
-	public onAvatarError?: (imgEl: HTMLImageElement) => void;
-
+	public accessor onAvatarError: (imgEl: HTMLImageElement) => void;
+	
 	private handleAvatarError(event: Event): void {
-		if (!this.onAvatarError) return;
-		const img = event.currentTarget as HTMLImageElement;
-		this.onAvatarError(img);
+		this.onAvatarError?.(event.currentTarget as HTMLImageElement);
 	}
 
 	/**
@@ -272,7 +270,13 @@ export class DiscordCommand extends LitElement implements LightTheme {
 			${when(
 				this.compactMode,
 				() => html`<div class="discord-reply-badge">${CommandIcon()}</div>`,
-				() => html`<img class="discord-replied-message-avatar" src="${ifDefined(profile.avatar)}" alt="${ifDefined(profile.author)}" @error=${this.handleAvatarError} />`
+				() =>
+					html`<img
+						class="discord-replied-message-avatar"
+						src="${ifDefined(profile.avatar)}"
+						alt="${ifDefined(profile.author)}"
+						@error=${this.handleAvatarError}
+					/>`
 			)}
 			<span class="discord-replied-message-username" style=${styleMap({ color: profile.roleColor ?? '' })}>${profile.author}</span>
 			<span> used </span>

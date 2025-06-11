@@ -267,12 +267,10 @@ export class DiscordReply extends LitElement implements LightTheme {
 	 * If not provided, nothing will happen on error.
 	 */
 	@property({ attribute: false })
-	public onAvatarError?: (imgEl: HTMLImageElement) => void;
+	public accessor onAvatarError: (imgEl: HTMLImageElement) => void;
 
 	private handleAvatarError(event: Event): void {
-		if (!this.onAvatarError) return;
-		const img = event.currentTarget as HTMLImageElement;
-		this.onAvatarError(img);
+		this.onAvatarError?.(event.currentTarget as HTMLImageElement);
 	}
 
 	/**
@@ -422,8 +420,14 @@ export class DiscordReply extends LitElement implements LightTheme {
 
 		return html`${when(
 			this.compactMode || this.deleted,
-			() => html`<div class="discord-reply-badge">${ReplyIcon()}</div>`,
-			() => html`<img class="discord-replied-message-avatar" src="${ifDefined(profile.avatar)}" alt="${ifDefined(profile.author)}" @error=${this.handleAvatarError} />`
+			() => html`<div class="discord-reply-badge">${ReplyIcon()}</div>`,\
+			() =>
+				html`<img
+					class="discord-replied-message-avatar"
+					src="${ifDefined(profile.avatar)}"
+					alt="${ifDefined(profile.author)}"
+					@error=${this.handleAvatarError}
+				/>`
 		)}
 		${when(
 			this.deleted,

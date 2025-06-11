@@ -282,12 +282,10 @@ export class DiscordMessage extends LitElement implements LightTheme {
 	 * If not provided, nothing will happen on error.
 	 */
 	@property({ attribute: false })
-	public onAvatarError?: (imgEl: HTMLImageElement) => void;
-
+	public accessor onAvatarError: (imgEl: HTMLImageElement) => void;
+	
 	private handleAvatarError(event: Event): void {
-		if (!this.onAvatarError) return;
-		const img = event.currentTarget as HTMLImageElement;
-		this.onAvatarError(img);
+		this.onAvatarError?.(event.currentTarget as HTMLImageElement);
 	}
 
 	/**

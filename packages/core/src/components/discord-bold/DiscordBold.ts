@@ -7,6 +7,9 @@ export class DiscordBold extends LitElement {
 	 * @internal
 	 */
 	public static override readonly styles = css`
+		:host {
+			display: inline-block;
+		}
 		:host > strong {
 			font-weight: 700;
 		}

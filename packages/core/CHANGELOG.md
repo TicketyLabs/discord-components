@@ -1,7 +1,33 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [4.0.2](https://github.com/skyra-project/discord-components/compare/v4.0.1...v4.0.2) - (2025-06-18)
+
+## 🐛 Bug Fixes
+
+- Add optional chaining for emoji checks in DiscordStringSelectMenuOption ([aadbe75](https://github.com/skyra-project/discord-components/commit/aadbe75cd8bd1b35424872911f756ba8d5d0d319))
+- Add optional chaining for emoji checks in DiscordReaction ([e0519d7](https://github.com/skyra-project/discord-components/commit/e0519d7b9f342c5846d227453af85febad2cc75a))
+
+# [4.0.1](https://github.com/skyra-project/discord-components/compare/v4.0.0...v4.0.1) - (2025-06-18)
+
+## 🐛 Bug Fixes
+
+- Explicitly specify that the core package is itself not a monorepo ([6d02b7d](https://github.com/skyra-project/discord-components/commit/6d02b7df8d43b992aa2c795c8448f4cd5206675b))
+- Add optional chaining for emoji property checks ([d0bfc5d](https://github.com/skyra-project/discord-components/commit/d0bfc5ddedfde7607554b2fb26ffddf941494d87))
+
+# [4.0.0](https://github.com/skyra-project/discord-components/compare/v4.0.0-alpha.39...v4.0.0) (2025-06-18)
+
+**Note:** Version bump only for package @skyra/discord-components-core
+
+# [4.0.0-alpha.39](https://github.com/skyra-project/discord-components/compare/v4.0.0-alpha.38...v4.0.0-alpha.39) (2025-06-18)
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#522](https://github.com/skyra-project/discord-components/issues/522)) ([c516b75](https://github.com/skyra-project/discord-components/commit/c516b759564e11ace031f61f6149c048cd27bb91)) (@renovate[bot])
+* **deps:** update all non-major dependencies ([#532](https://github.com/skyra-project/discord-components/issues/532)) ([03fcee0](https://github.com/skyra-project/discord-components/commit/03fcee0266721c2b4608b7c8b66aa0e078b031aa)) (@renovate[bot])
+* **deps:** update all non-major dependencies ([#540](https://github.com/skyra-project/discord-components/issues/540)) ([79a6880](https://github.com/skyra-project/discord-components/commit/79a6880d914f8438cc9b8c763191d33005bbdf94)) (@renovate[bot])
+* **deps:** update all non-major dependencies ([#558](https://github.com/skyra-project/discord-components/issues/558)) ([6189fcd](https://github.com/skyra-project/discord-components/commit/6189fcdc9f5be7a4922b9f9f630f884051c2f737)) (@renovate[bot])
 
 # [4.0.0-alpha.38](https://github.com/skyra-project/discord-components/compare/v4.0.0-alpha.37...v4.0.0-alpha.38) (2025-01-04)
 

@@ -6,7 +6,7 @@ on:
       is-alpha:
         type: boolean
         required: false
-        default: true
+        default: false
         description: Whether to publish an alpha version or not
 
 concurrency:
@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         uses: sapphiredev/.github/actions/install-yarn-dependencies@main
         with:
-          node-version: 20
+          node-version: 24
       - name: Configure Git
         run: |
           git remote set-url origin "https://${GITHUB_TOKEN}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git"
@@ -46,9 +46,9 @@ jobs:
         working-directory: packages/core
         run: |
           if [ "${{ github.event.inputs.is-alpha }}" == "true" ]; then
-            yarn bump --preid alpha --github-release-pre-release --dry-run
+            yarn bump --preid alpha --github-release-pre-release
           else
-            yarn bump --dry-run
+            yarn bump
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -62,8 +62,12 @@ jobs:
       - name: Copy changelog over
         working-directory: packages/react
         run: cp ../core/CHANGELOG.md CHANGELOG.md
+      - name: Push changed package.json to github
+        run: |
+          git add packages/react/package.json packages/react/CHANGELOG.md
+          git commit -m "chore(react): update package version to ${{ steps.store-new-version.outputs.new_version }}"
+          git push origin main
       - name: Configure yarn
-        working-directory: packages/core
         run: |
           yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
           yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
@@ -71,9 +75,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       - name: Publish @skyra/discord-components-core
         working-directory: packages/core
-        if: false
         run: yarn npm publish
       - name: Publish @skyra/discord-components-react
         working-directory: packages/react
-        if: false
         run: yarn npm publish

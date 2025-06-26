@@ -80,7 +80,7 @@ export class DiscordImageAttachment extends LitElement {
 	 */
 	@property({ attribute: false })
 	public accessor onImageError: (imgEl: HTMLImageElement) => void;
-	
+
 	private handleImageError(event: Event): void {
 		this.onImageError?.(event.currentTarget as HTMLImageElement);
 	}

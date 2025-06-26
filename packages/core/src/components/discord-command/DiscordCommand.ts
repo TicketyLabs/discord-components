@@ -119,7 +119,7 @@ export class DiscordCommand extends LitElement implements LightTheme {
 	 */
 	@property({ attribute: false })
 	public accessor onAvatarError: (imgEl: HTMLImageElement) => void;
-	
+
 	private handleAvatarError(event: Event): void {
 		this.onAvatarError?.(event.currentTarget as HTMLImageElement);
 	}

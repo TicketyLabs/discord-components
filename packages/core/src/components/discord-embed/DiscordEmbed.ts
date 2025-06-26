@@ -1,13 +1,11 @@
 import { consume } from '@lit/context';
-import { css, html, LitElement, type TemplateResult } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { when } from 'lit/directives/when.js';
-import type { Emoji, LightTheme } from '../../types.js';
-import { getGlobalEmojiUrl } from '../../util.js';
-import '../discord-custom-emoji/DiscordCustomEmoji.js';
+import type { LightTheme } from '../../types.js';
 import { messagesLightTheme } from '../discord-messages/DiscordMessages.js';
 
 @customElement('discord-embed')
@@ -144,32 +142,6 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 			color: #4f545c;
 		}
 
-		:host .discord-embed-title {
-			-webkit-box-align: center;
-			align-items: center;
-			color: #fff;
-			display: inline-block;
-			font-size: 1rem;
-			font-weight: 600;
-			grid-column: 1 / 1;
-			margin-top: 8px;
-			min-width: 0;
-		}
-
-		:host([light-theme]) .discord-embed-title {
-			color: #060607;
-		}
-
-		:host .discord-embed-title a {
-			color: #00aff4;
-			font-weight: 600;
-			text-decoration: none;
-		}
-
-		:host .discord-embed-title a:hover {
-			text-decoration: underline;
-		}
-
 		:host .discord-embed-image {
 			border-radius: 4px;
 			max-width: 300px;
@@ -254,31 +226,6 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 	public accessor authorUrl: string;
 
 	/**
-	 * The embed title.
-	 */
-	@property({ attribute: 'embed-title' })
-	public accessor embedTitle: string;
-
-	/**
-	 * An emoji that is prefixed to {@link DiscordEmbed.embedTitle | embedTitle}.
-	 *
-	 * This should be keyed as `{ key: { emojiData } }` wherein `key`
-	 * should occur in the {@link DiscordEmbed.embedTitle | embedTitle}.
-	 *
-	 * By default this component will use the global emojis from
-	 * {@link getGlobalEmojiUrl}, however on SSR frameworks like Nuxt 3 global config doesn't
-	 * work so we provide this as an alternative method.
-	 */
-	@property({ attribute: false })
-	public accessor embedEmojisMap: { [key: string]: Emoji } = {};
-
-	/**
-	 * The URL to open when you click on the embed title.
-	 */
-	@property()
-	public accessor url: string;
-
-	/**
 	 * The thumbnail image to use.
 	 */
 	@property()
@@ -318,16 +265,13 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 	public accessor lightTheme = false;
 
 	protected override render() {
-		const emojiParsedAuthorName = this.parseTitle(this.authorName);
-		const emojiParsedEmbedTitle = this.parseTitle(this.embedTitle);
-
 		return html`<div style=${styleMap({ 'background-color': this.color })} class="discord-left-border"></div>
 			<div class="discord-embed-root">
 				<div class="discord-embed-wrapper">
 					<div class="discord-embed-grid">
 						${when(this.provider, () => html`<div class="discord-embed-provider">${this.provider}</div>`)}
 						${when(
-							emojiParsedAuthorName,
+							this.authorName,
 							() =>
 								html`<div class="discord-embed-author">
 									${when(
@@ -343,21 +287,13 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 												rel="noopener noreferrer"
 												class="discord-embed-author-block"
 											>
-												<span class="discord-embed-author-block">${emojiParsedAuthorName}</span>
+												<span class="discord-embed-author-block">${this.authorName}</span>
 											</a>`,
-										() => html`<span class="discord-embed-author-block">${emojiParsedAuthorName}</span>`
+										() => html`<span class="discord-embed-author-block">${this.authorName}</span>`
 									)}
 								</div>`
 						)}
-						${when(
-							emojiParsedEmbedTitle,
-							() =>
-								html`<div class="discord-embed-title">
-									${this.url
-										? html`<a href="${this.url}" target="_blank" rel="noopener noreferrer"> ${emojiParsedEmbedTitle} </a>`
-										: html`${emojiParsedEmbedTitle}`}
-								</div>`
-						)}
+						<slot name="title"></slot>
 						<slot name="description"></slot>
 						<slot name="fields"></slot>
 						${when(
@@ -397,41 +333,6 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 		}
 
 		return null;
-	}
-
-	private parseTitle(title?: string) {
-		if (!title) return null;
-
-		const el: (TemplateResult<1> | string)[] = [];
-		let complete = '';
-
-		for (const words of title.split('\n')) {
-			for (const word of words.split(' ')) {
-				const emoji = getGlobalEmojiUrl(word) ?? this.embedEmojisMap[word] ?? ({} as Emoji);
-
-				if (emoji.name) {
-					el.push(html`<discord-custom-emoji name=${emoji.name} url=${ifDefined(emoji.url)} embed-emoji></discord-custom-emoji>`);
-				} else {
-					complete += `${word} `;
-				}
-
-				if (complete === ' ') {
-					el.push(html`<br />`);
-				}
-			}
-
-			el.push(complete);
-
-			complete = '';
-		}
-
-		return el.map((wordOrHtmlTemplate) => {
-			if (typeof wordOrHtmlTemplate === 'string') {
-				return html`<span>${wordOrHtmlTemplate}</span>`;
-			}
-
-			return wordOrHtmlTemplate;
-		});
 	}
 }
 

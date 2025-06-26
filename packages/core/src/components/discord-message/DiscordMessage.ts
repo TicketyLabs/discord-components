@@ -207,7 +207,7 @@ export class DiscordMessage extends LitElement implements LightTheme {
 		}
 
 		:host(:hover) {
-			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.0784314)
+			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.0784314);
 		}
 
 		:host([highlight]:hover) {
@@ -283,7 +283,7 @@ export class DiscordMessage extends LitElement implements LightTheme {
 	 */
 	@property({ attribute: false })
 	public accessor onAvatarError: (imgEl: HTMLImageElement) => void;
-	
+
 	private handleAvatarError(event: Event): void {
 		this.onAvatarError?.(event.currentTarget as HTMLImageElement);
 	}
@@ -481,7 +481,7 @@ export class DiscordMessage extends LitElement implements LightTheme {
 					() => null,
 					() =>
 						html`<div class="discord-author-avatar">
-	   						<img src="${ifDefined(profile.avatar)}" alt="${ifDefined(profile.author)}" @error=${this.handleAvatarError} />
+							<img src="${ifDefined(profile.avatar)}" alt="${ifDefined(profile.author)}" @error=${this.handleAvatarError} />
 						</div>`
 				)}
 

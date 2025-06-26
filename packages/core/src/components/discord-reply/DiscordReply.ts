@@ -420,7 +420,7 @@ export class DiscordReply extends LitElement implements LightTheme {
 
 		return html`${when(
 			this.compactMode || this.deleted,
-			() => html`<div class="discord-reply-badge">${ReplyIcon()}</div>`,\
+			() => html`<div class="discord-reply-badge">${ReplyIcon()}</div>`,
 			() =>
 				html`<img
 					class="discord-replied-message-avatar"

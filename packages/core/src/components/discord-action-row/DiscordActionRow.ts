@@ -10,7 +10,7 @@ export class DiscordActionRow extends LitElement {
 		:host {
 			display: flex;
 			flex-wrap: wrap;
-            row-gap: 8px;
+			row-gap: 8px;
 			column-gap: 8px;
 		}
 	`;

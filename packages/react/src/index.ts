@@ -15,6 +15,7 @@ export const DiscordCustomEmoji = createReactComponent('discord-custom-emoji', R
 export const DiscordEmbed = createReactComponent('discord-embed', ReactComponents.DiscordEmbed);
 export const DiscordEmbedDescription = createReactComponent('discord-embed-description', ReactComponents.DiscordEmbedDescription);
 export const DiscordEmbedField = createReactComponent('discord-embed-field', ReactComponents.DiscordEmbedField);
+export const DiscordEmbedFieldTitle = createReactComponent('discord-embed-field-title', ReactComponents.DiscordEmbedFieldTitle);
 export const DiscordEmbedFields = createReactComponent('discord-embed-fields', ReactComponents.DiscordEmbedFields);
 export const DiscordEmbedFooter = createReactComponent('discord-embed-footer', ReactComponents.DiscordEmbedFooter);
 export const DiscordEmbedTitle = createReactComponent('discord-embed-title', ReactComponents.DiscordEmbedTitle);

@@ -14,6 +14,7 @@ export { DiscordCustomEmoji } from './components/discord-custom-emoji/DiscordCus
 export { DiscordEmbed } from './components/discord-embed/DiscordEmbed.js';
 export { DiscordEmbedDescription } from './components/discord-embed-description/DiscordEmbedDescription.js';
 export { DiscordEmbedField } from './components/discord-embed-field/DiscordEmbedField.js';
+export { DiscordEmbedFieldTitle } from './components/discord-embed-field-title/DiscordEmbedFieldTitle.js';
 export { DiscordEmbedFields } from './components/discord-embed-fields/DiscordEmbedFields.js';
 export { DiscordEmbedFooter } from './components/discord-embed-footer/DiscordEmbedFooter.js';
 export { DiscordEmbedTitle } from './components/discord-embed-title/DiscordEmbedTitle.js';

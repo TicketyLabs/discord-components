@@ -1,10 +1,11 @@
 import { consume } from '@lit/context';
 import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import type { LightTheme } from '../../types.js';
 import { messagesLightTheme } from '../discord-messages/DiscordMessages.js';
 
 @customElement('discord-embed-title')
-export class DiscordEmbedTitle extends LitElement {
+export class DiscordEmbedTitle extends LitElement implements LightTheme {
 	/**
 	 * @internal
 	 */

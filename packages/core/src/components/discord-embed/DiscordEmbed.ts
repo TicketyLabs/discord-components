@@ -27,17 +27,6 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 			color: oklab(0.322425 0.00154591 -0.010555);
 		}
 
-		:host .discord-left-border {
-			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.2);
-			border-radius: 4px 0 0 4px;
-			flex-shrink: 0;
-			width: 4px;
-		}
-
-		:host([light-theme]) .discord-left-border {
-			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.360784);
-		}
-
 		:host .discord-embed-root {
 			display: grid;
 			grid-auto-flow: row;
@@ -45,6 +34,12 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 			min-height: 0;
 			min-width: 0;
 			text-indent: 0;
+			border-left: 4px solid oklab(0.678888 0.00325716 -0.011175 / 0.2);
+			border-radius: 4px 0 0 4px;
+		}
+
+		:host([light-theme]) .discord-embed-root {
+			border-left-color: oklab(0.678888 0.00325716 -0.011175 / 0.360784);
 		}
 
 		:host .discord-embed-wrapper {
@@ -265,49 +260,45 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 	public accessor lightTheme = false;
 
 	protected override render() {
-		return html`<div style=${styleMap({ 'background-color': this.color })} class="discord-left-border"></div>
-			<div class="discord-embed-root">
-				<div class="discord-embed-wrapper">
-					<div class="discord-embed-grid">
-						${when(this.provider, () => html`<div class="discord-embed-provider">${this.provider}</div>`)}
-						${when(
-							this.authorName,
-							() =>
-								html`<div class="discord-embed-author">
-									${when(
-										this.authorImage,
-										() => html`<img src=${ifDefined(this.authorImage)} alt="" class="discord-author-image" />`
-									)}
-									${when(
-										this.authorUrl,
-										() =>
-											html`<a
-												href=${ifDefined(this.authorUrl)}
-												target="_blank"
-												rel="noopener noreferrer"
-												class="discord-embed-author-block"
-											>
-												<span class="discord-embed-author-block">${this.authorName}</span>
-											</a>`,
-										() => html`<span class="discord-embed-author-block">${this.authorName}</span>`
-									)}
-								</div>`
-						)}
-						<slot name="title"></slot>
-						<slot name="description"></slot>
-						<slot name="fields"></slot>
-						${when(
-							this.image || this.video,
-							() =>
-								html`<div class=${classMap({ 'discord-embed-media': true, 'discord-embed-media-video': Boolean(this.video) })}>
-									${this.renderMedia()}
-								</div>`
-						)}
-						${when(this.thumbnail, () => html`<img src=${ifDefined(this.thumbnail)} alt="" class="discord-embed-thumbnail" />`)}
-						<slot name="footer"></slot>
-					</div>
+		return html`<div class="discord-embed-root" style=${styleMap({ 'border-left-color': this.color })}>
+			<div class="discord-embed-wrapper">
+				<div class="discord-embed-grid">
+					${when(this.provider, () => html`<div class="discord-embed-provider">${this.provider}</div>`)}
+					${when(
+						this.authorName,
+						() =>
+							html`<div class="discord-embed-author">
+								${when(this.authorImage, () => html`<img src=${ifDefined(this.authorImage)} alt="" class="discord-author-image" />`)}
+								${when(
+									this.authorUrl,
+									() =>
+										html`<a
+											href=${ifDefined(this.authorUrl)}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="discord-embed-author-block"
+										>
+											<span class="discord-embed-author-block">${this.authorName}</span>
+										</a>`,
+									() => html`<span class="discord-embed-author-block">${this.authorName}</span>`
+								)}
+							</div>`
+					)}
+					<slot name="title"></slot>
+					<slot name="description"></slot>
+					<slot name="fields"></slot>
+					${when(
+						this.image || this.video,
+						() =>
+							html`<div class=${classMap({ 'discord-embed-media': true, 'discord-embed-media-video': Boolean(this.video) })}>
+								${this.renderMedia()}
+							</div>`
+					)}
+					${when(this.thumbnail, () => html`<img src=${ifDefined(this.thumbnail)} alt="" class="discord-embed-thumbnail" />`)}
+					<slot name="footer"></slot>
 				</div>
-			</div>`;
+			</div>
+		</div>`;
 	}
 
 	private renderMedia() {

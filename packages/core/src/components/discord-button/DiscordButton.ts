@@ -68,12 +68,12 @@ export class DiscordButton extends LitElement {
 			background-color: rgb(70, 84, 192);
 		}
 
-		:host([dark-theme]) .secondary {
+		:host .secondary {
 			color: rgb(235, 235, 237);
 			background-color: rgba(151, 151, 159, 0.12);
 		}
 
-		:host([dark-theme]) .secondary.hoverable:hover {
+		:host .secondary.hoverable:hover {
 			background-color: rgba(151, 151, 159, 0.2);
 		}
 

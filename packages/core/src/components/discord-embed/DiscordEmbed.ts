@@ -15,7 +15,7 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 	 */
 	public static override readonly styles = css`
 		:host {
-			color: #dcddde;
+			color: oklab(0.952331 0.000418991 -0.00125992);
 			display: flex;
 			font-size: 13px;
 			line-height: 150%;
@@ -24,18 +24,18 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 		}
 
 		:host([light-theme]) {
-			color: #2e3338;
+			color: oklab(0.322425 0.00154591 -0.010555);
 		}
 
 		:host .discord-left-border {
-			background-color: #202225;
+			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.2);
 			border-radius: 4px 0 0 4px;
 			flex-shrink: 0;
 			width: 4px;
 		}
 
 		:host([light-theme]) .discord-left-border {
-			background-color: #e3e5e8;
+			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.360784);
 		}
 
 		:host .discord-embed-root {
@@ -48,9 +48,9 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 		}
 
 		:host .discord-embed-wrapper {
-			background-color: #2f3136;
+			background-color: oklab(0.262384 0.00252247 -0.00889932);
 			max-width: 520px;
-			border: 1px solid rgba(46, 48, 54, 0.6);
+			border: 1px solid oklab(0.678888 0.00325716 -0.011175 / 0.121569);
 			border-radius: 0 4px 4px 0;
 			justify-self: start;
 			align-self: start;
@@ -59,8 +59,8 @@ export class DiscordEmbed extends LitElement implements LightTheme {
 		}
 
 		:host([light-theme]) .discord-embed-wrapper {
-			background-color: rgb(242, 243, 245);
-			border-color: rgba(205, 205, 205, 0.3);
+			background-color: oklab(0.999994 0.0000455678 0.0000200868);
+			border-color: oklab(0.678888 0.00325716 -0.011175 / 0.278431);
 		}
 
 		:host .discord-embed-wrapper .discord-embed-grid {

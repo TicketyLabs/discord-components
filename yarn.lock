@@ -2085,40 +2085,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@skyra/discord-components-core@workspace:^, @skyra/discord-components-core@workspace:packages/core":
-  version: 0.0.0-use.local
-  resolution: "@skyra/discord-components-core@workspace:packages/core"
-  dependencies:
-    "@custom-elements-manifest/analyzer": "npm:^0.10.4"
-    "@favware/cliff-jumper": "npm:^6.0.0"
-    "@lit/context": "npm:^1.1.6"
-    "@web/dev-server": "npm:^0.4.6"
-    "@web/dev-server-esbuild": "npm:^1.0.4"
-    concurrently: "npm:^9.2.0"
-    lit: "npm:^3.3.1"
-    ts-lit-plugin: "npm:^2.0.2"
-    typescript: "npm:^5.8.3"
-  languageName: unknown
-  linkType: soft
-
-"@skyra/discord-components-react@workspace:^, @skyra/discord-components-react@workspace:packages/react":
-  version: 0.0.0-use.local
-  resolution: "@skyra/discord-components-react@workspace:packages/react"
-  dependencies:
-    "@lit/react": "npm:^1.0.8"
-    "@skyra/discord-components-core": "workspace:^"
-    "@types/react": "npm:^19.1.8"
-    colorette: "npm:^2.0.20"
-    react: "npm:^19.1.0"
-    rimraf: "npm:^6.0.1"
-    tsup: "npm:^8.5.0"
-    typescript: "npm:^5.8.3"
-  peerDependencies:
-    react: 16.8.x || 17.x || 18.x || 19.x
-    react-dom: 16.8.x || 17.x || 18.x || 19.x
-  languageName: unknown
-  linkType: soft
-
 "@stylistic/eslint-plugin-jsx@npm:^4.2.0":
   version: 4.2.0
   resolution: "@stylistic/eslint-plugin-jsx@npm:4.2.0"
@@ -2178,6 +2144,40 @@ __metadata:
   checksum: 10/919cb6ed90259cd0398b7e485dfbacae42423ff4202d5753c6545d3dfa9dc3d63e7f34941d6b94608c2730ec1539d30805411d9501c86951966e0d4aa0c4ae44
   languageName: node
   linkType: hard
+
+"@tickety/discord-components-core@workspace:^, @tickety/discord-components-core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@tickety/discord-components-core@workspace:packages/core"
+  dependencies:
+    "@custom-elements-manifest/analyzer": "npm:^0.10.4"
+    "@favware/cliff-jumper": "npm:^6.0.0"
+    "@lit/context": "npm:^1.1.6"
+    "@web/dev-server": "npm:^0.4.6"
+    "@web/dev-server-esbuild": "npm:^1.0.4"
+    concurrently: "npm:^9.2.0"
+    lit: "npm:^3.3.1"
+    ts-lit-plugin: "npm:^2.0.2"
+    typescript: "npm:^5.8.3"
+  languageName: unknown
+  linkType: soft
+
+"@tickety/discord-components-react@workspace:^, @tickety/discord-components-react@workspace:packages/react":
+  version: 0.0.0-use.local
+  resolution: "@tickety/discord-components-react@workspace:packages/react"
+  dependencies:
+    "@lit/react": "npm:^1.0.8"
+    "@tickety/discord-components-core": "workspace:^"
+    "@types/react": "npm:^19.0.0"
+    colorette: "npm:^2.0.20"
+    react: "npm:^19.1.0"
+    rimraf: "npm:^6.0.1"
+    tsup: "npm:^8.5.0"
+    typescript: "npm:^5.8.3"
+  peerDependencies:
+    react: 16.8.x || 17.x || 18.x || 19.x
+    react-dom: 16.8.x || 17.x || 18.x || 19.x
+  languageName: unknown
+  linkType: soft
 
 "@tybys/wasm-util@npm:^0.9.0":
   version: 0.9.0
@@ -2534,6 +2534,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-dom@npm:^19.0.0":
+  version: 19.2.2
+  resolution: "@types/react-dom@npm:19.2.2"
+  peerDependencies:
+    "@types/react": ^19.2.0
+  checksum: 10/73d5671e57ab73cb3f2acd7992faee8f90d5b4d155b972e76e91fa13e5871ebb5e224960b05039d57ea502cb3370746eb98beda5fa44e9712b4aee52653c237a
+  languageName: node
+  linkType: hard
+
 "@types/react-dom@npm:^19.1.6":
   version: 19.1.6
   resolution: "@types/react-dom@npm:19.1.6"
@@ -2543,12 +2552,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:19.1.8, @types/react@npm:^19.1.8":
+"@types/react@npm:19.1.8":
   version: 19.1.8
   resolution: "@types/react@npm:19.1.8"
   dependencies:
     csstype: "npm:^3.0.2"
   checksum: 10/a3e6fe0f60f22828ef887f30993aa147b71532d7b1219dd00d246277eb7a9ca01ec533096237fa21ca1bccb3653373b4e8e59e5ae59f9c793058384bbc1f4d5c
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^19.0.0":
+  version: 19.2.2
+  resolution: "@types/react@npm:19.2.2"
+  dependencies:
+    csstype: "npm:^3.0.2"
+  checksum: 10/d6adf8fd4bb23a7e04da5700d96b15dc0f59653727a9c6e940c151d7232fa1dbbab98417d5ac830dcfb6cba3f206efbd4cd83647e6f9a688d7363a90e607f6bf
   languageName: node
   linkType: hard
 
@@ -4892,8 +4910,8 @@ __metadata:
     "@astrojs/lit": "npm:^4.3.0"
     "@astrojs/starlight": "npm:0.34.5"
     "@sapphire/docusaurus-plugin-npm2yarn2pnpm": "npm:2.0.2"
-    "@skyra/discord-components-core": "workspace:^"
-    "@skyra/discord-components-react": "workspace:^"
+    "@tickety/discord-components-core": "workspace:^"
+    "@tickety/discord-components-react": "workspace:^"
     "@types/react": "npm:19.1.8"
     "@types/react-dom": "npm:^19.1.6"
     "@webcomponents/template-shadowroot": "npm:^0.2.1"
@@ -11773,6 +11791,8 @@ __metadata:
     "@sapphire/prettier-config": "npm:^2.0.0"
     "@sapphire/ts-config": "npm:^5.0.1"
     "@types/node": "npm:^24.0.13"
+    "@types/react": "npm:^19.0.0"
+    "@types/react-dom": "npm:^19.0.0"
     chalk-cli: "npm:^6.0.0"
     eslint: "npm:^9.31.0"
     eslint-config-neon: "npm:^0.2.7"
@@ -11788,6 +11808,7 @@ __metadata:
     prettier: "npm:^3.6.2"
     prettier-plugin-astro: "npm:^0.14.1"
     react: "npm:^19.1.0"
+    react-dom: "npm:^19.1.0"
     rimraf: "npm:^6.0.1"
     tsup: "npm:^8.5.0"
     typescript: "npm:^5.8.3"

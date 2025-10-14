@@ -1,8 +1,8 @@
 {
-	"name": "@skyra/discord-components-core",
+	"name": "@tickety/discord-components-core",
 	"version": "4.0.2",
 	"description": "Web components to easily build and display fake Discord messages on your webpages.",
-	"author": "@skyra",
+	"author": "@tickety",
 	"license": "MIT",
 	"main": "dist/index.js",
 	"module": "dist/index.js",
@@ -125,7 +125,7 @@
 		"./dist/components/discord-verified-author-tag/DiscordVerifiedAuthorTag.js",
 		"./dist/components/discord-video-attachment/DiscordVideoAttachment.js"
 	],
-	"homepage": "https://github.com/skyra-project/discord-components/tree/main/packages/core#readme",
+	"homepage": "https://github.com/ticketylabs/discord-components/tree/main/packages/core#readme",
 	"scripts": {
 		"build:ts": "tsc -b src",
 		"watch": "tsc -b src --watch",
@@ -133,6 +133,7 @@
 		"start": "wds",
 		"build": "yarn build:ts && yarn analyze --exclude dist",
 		"prepack": "yarn build",
+		"prepare": "yarn build",
 		"lint": "eslint src test --ext .ts",
 		"format": "prettier . --write --ignore-path ../../.prettierignore",
 		"bump": "cliff-jumper",
@@ -165,13 +166,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/skyra-project/discord-components.git"
+		"url": "git+https://github.com/ticketylabs/discord-components.git"
 	},
 	"bugs": {
-		"url": "https://github.com/skyra-project/discord-components/issues"
+		"url": "https://github.com/ticketylabs/discord-components/issues"
 	},
 	"keywords": [
-		"skyra",
+		"tickety",
 		"typescript",
 		"ts",
 		"yarn",

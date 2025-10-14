@@ -1,9 +1,9 @@
 <div align="center">
 
-# @tickety/discord-components-react
+# @ticketylabs/discord-components-react
 
 **React bindings for
-[@tickety/discord-components-core](https://github.com/ticketylabs/discord-components/tree/main/packages/core)**
+[@ticketylabs/discord-components-core](https://github.com/ticketylabs/discord-components/tree/main/packages/core)**
 
 <!-- # HEADER START # -->
 
@@ -15,15 +15,15 @@ webpages**
 
 _Core Package_
 
-[![npm](https://img.shields.io/npm/v/@tickety/discord-components-core?color=crimson&logo=npm&style=flat-square&label=@tickety/discord-components-core)](https://www.npmjs.com/package/@tickety/discord-components-core)
-[![npm](https://img.shields.io/npm/dt/@tickety/discord-components-core.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@tickety/discord-components-core)
-[![npm](https://img.shields.io/bundlephobia/min/@tickety/discord-components-core?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@tickety/discord-components-core)
+[![npm](https://img.shields.io/npm/v/@ticketylabs/discord-components-core?color=crimson&logo=npm&style=flat-square&label=@ticketylabs/discord-components-core)](https://www.npmjs.com/package/@ticketylabs/discord-components-core)
+[![npm](https://img.shields.io/npm/dt/@ticketylabs/discord-components-core.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@ticketylabs/discord-components-core)
+[![npm](https://img.shields.io/bundlephobia/min/@ticketylabs/discord-components-core?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@ticketylabs/discord-components-core)
 
 _React Bindings_
 
-[![npm](https://img.shields.io/npm/v/@tickety/discord-components-react?color=crimson&logo=npm&style=flat-square&label=@tickety/discord-components-react)](https://www.npmjs.com/package/@tickety/discord-components-react)
-[![npm](https://img.shields.io/npm/dt/@tickety/discord-components-react.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@tickety/discord-components-react)
-[![npm](https://img.shields.io/bundlephobia/min/@tickety/discord-components-react?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@tickety/discord-components-react)
+[![npm](https://img.shields.io/npm/v/@ticketylabs/discord-components-react?color=crimson&logo=npm&style=flat-square&label=@ticketylabs/discord-components-react)](https://www.npmjs.com/package/@ticketylabs/discord-components-react)
+[![npm](https://img.shields.io/npm/dt/@ticketylabs/discord-components-react.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@ticketylabs/discord-components-react)
+[![npm](https://img.shields.io/bundlephobia/min/@ticketylabs/discord-components-react?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@ticketylabs/discord-components-react)
 
 [![Support Server](https://discord.com/api/guilds/254360814063058944/embed.png?style=banner2)](https://discord.gg/ticketylabs-support)
 
@@ -37,7 +37,7 @@ _React Bindings_
 
 <!-- # TOC START # -->
 
-- [@tickety/discord-components-react](#ticketydiscord-components-react)
+- [@ticketylabs/discord-components-react](#ticketydiscord-components-react)
   - [Description](#description)
     - [Upgrading guide](#upgrading-guide)
   - [Features](#features)
@@ -110,9 +110,9 @@ to the
 ## Installation
 
 ```bash
-yarn add @tickety/discord-components-core @tickety/discord-components-react
-# or pnpm add @tickety/discord-components-core @tickety/discord-components-react
-# or npm install @tickety/discord-components-core @tickety/discord-components-react
+yarn add @ticketylabs/discord-components-core @ticketylabs/discord-components-react
+# or pnpm add @ticketylabs/discord-components-core @ticketylabs/discord-components-react
+# or npm install @ticketylabs/discord-components-core @ticketylabs/discord-components-react
 ```
 
 <!-- # REACT_USAGE START # -->
@@ -130,7 +130,7 @@ yarn add @tickety/discord-components-core @tickety/discord-components-react
 React is currently the only library among the "big" libraries for frontend
 development that does not fully support custom elements / webcomponents yet (see
 [this React documentation page for more info](https://react.dev/reference/react-dom/components#custom-html-elements)).
-For this reason we ship the package `@tickety/discord-components-react`.
+For this reason we ship the package `@ticketylabs/discord-components-react`.
 
 We sincerely hope that this situation will improve in the future, but no one
 knows what their plans are.
@@ -219,12 +219,12 @@ per React's own documentation. We very strongly recommend using Vite instead.
 
 This library uses a custom object on the browser `window` for configuration.
 Under normal circumstances by simply importing the package (with
-`import '@tickety/discord-components-react'`) the module augmentations should
-also be loaded. If for whatever reason this does not happen, then you can define
-them manually yourself. You can do so with the following code snippet:
+`import '@ticketylabs/discord-components-react'`) the module augmentations
+should also be loaded. If for whatever reason this does not happen, then you can
+define them manually yourself. You can do so with the following code snippet:
 
 ```ts
-import type { DiscordMessageOptions } from '@tickety/discord-components-react';
+import type { DiscordMessageOptions } from '@ticketylabs/discord-components-react';
 
 declare global {
   // eslint-disable-next-line no-var
@@ -249,7 +249,7 @@ The current avatar shortcut strings available are "blue" (default), "gray",
 
 If you want to add to or override the shortcuts, you can set them via
 `globalThis.$discordMessage.avatars` or by using the `setConfig` function
-(`import { setConfig } from '@tickety/discord-components-react'`).
+(`import { setConfig } from '@ticketylabs/discord-components-react'`).
 
 ```ts
 globalThis.$discordMessage = {
@@ -262,7 +262,7 @@ globalThis.$discordMessage = {
 ```
 
 ```ts
-import { setConfig } from '@tickety/discord-components-react';
+import { setConfig } from '@ticketylabs/discord-components-react';
 
 setConfig({
   avatars: {
@@ -278,7 +278,7 @@ setConfig({
 Sometimes you'll want to use the same message data across multiple messages. You
 can do so by providing an object of profiles in
 `globalThis.$discordMessage.profiles` or by using the `setConfig` function
-(`import { setConfig } from '@tickety/discord-components-react'`).
+(`import { setConfig } from '@ticketylabs/discord-components-react'`).
 
 ```ts
 globalThis.$discordMessage = {
@@ -300,7 +300,7 @@ globalThis.$discordMessage = {
 ```
 
 ```ts
-import { setConfig } from '@tickety/discord-components-react';
+import { setConfig } from '@ticketylabs/discord-components-react';
 
 setConfig({
   profiles: {

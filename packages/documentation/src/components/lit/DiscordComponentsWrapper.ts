@@ -1,4 +1,4 @@
-import '@tickety/discord-components-core';
+import '@ticketylabs/discord-components-core';
 
 import { LitElement, css, html } from 'lit';
 

@@ -1,8 +1,8 @@
 {
-	"name": "@tickety/discord-components-react",
+	"name": "@ticketylabs/discord-components-react",
 	"version": "4.0.2",
-	"description": "React bindings for @tickety/discord-components-core",
-	"author": "@tickety",
+	"description": "React bindings for @ticketylabs/discord-components-core",
+	"author": "@ticketylabs",
 	"license": "MIT",
 	"main": "dist/cjs/index.cjs",
 	"module": "dist/esm/index.mjs",
@@ -32,7 +32,7 @@
 	},
 	"dependencies": {
 		"@lit/react": "^1.0.8",
-		"@tickety/discord-components-core": "workspace:^",
+		"@ticketylabs/discord-components-core": "^4.0.2",
 		"react": "^19.1.0"
 	},
 	"devDependencies": {

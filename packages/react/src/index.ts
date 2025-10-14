@@ -1,4 +1,4 @@
-import * as ReactComponents from '@tickety/discord-components-core';
+import * as ReactComponents from '@ticketylabs/discord-components-core';
 import { createReactComponent } from './react-components/createComponent.js';
 
 /* IMPORTS START */
@@ -61,8 +61,8 @@ export const DiscordVideoAttachment = createReactComponent('discord-video-attach
 
 /* IMPORTS END */
 
-export type { Avatars, DiscordMessageOptions, DiscordTimestamp, Emoji, LightTheme, Profile } from '@tickety/discord-components-core';
-export { getConfig, setConfig } from '@tickety/discord-components-core';
+export type { Avatars, DiscordMessageOptions, DiscordTimestamp, Emoji, LightTheme, Profile } from '@ticketylabs/discord-components-core';
+export { getConfig, setConfig } from '@ticketylabs/discord-components-core';
 
 declare global {
 	// eslint-disable-next-line vars-on-top

@@ -6,12 +6,12 @@
 
 This library uses a custom object on the browser `window` for configuration.
 Under normal circumstances by simply importing the package (with
-`import '@tickety/discord-components-react'`) the module augmentations should
-also be loaded. If for whatever reason this does not happen, then you can define
-them manually yourself. You can do so with the following code snippet:
+`import '@ticketylabs/discord-components-react'`) the module augmentations
+should also be loaded. If for whatever reason this does not happen, then you can
+define them manually yourself. You can do so with the following code snippet:
 
 ```ts
-import type { DiscordMessageOptions } from '@tickety/discord-components-react';
+import type { DiscordMessageOptions } from '@ticketylabs/discord-components-react';
 
 declare global {
   // eslint-disable-next-line no-var
@@ -36,7 +36,7 @@ The current avatar shortcut strings available are "blue" (default), "gray",
 
 If you want to add to or override the shortcuts, you can set them via
 `globalThis.$discordMessage.avatars` or by using the `setConfig` function
-(`import { setConfig } from '@tickety/discord-components-react'`).
+(`import { setConfig } from '@ticketylabs/discord-components-react'`).
 
 ```ts
 globalThis.$discordMessage = {
@@ -49,7 +49,7 @@ globalThis.$discordMessage = {
 ```
 
 ```ts
-import { setConfig } from '@tickety/discord-components-react';
+import { setConfig } from '@ticketylabs/discord-components-react';
 
 setConfig({
   avatars: {
@@ -65,7 +65,7 @@ setConfig({
 Sometimes you'll want to use the same message data across multiple messages. You
 can do so by providing an object of profiles in
 `globalThis.$discordMessage.profiles` or by using the `setConfig` function
-(`import { setConfig } from '@tickety/discord-components-react'`).
+(`import { setConfig } from '@ticketylabs/discord-components-react'`).
 
 ```ts
 globalThis.$discordMessage = {
@@ -87,7 +87,7 @@ globalThis.$discordMessage = {
 ```
 
 ```ts
-import { setConfig } from '@tickety/discord-components-react';
+import { setConfig } from '@ticketylabs/discord-components-react';
 
 setConfig({
   profiles: {

@@ -1,8 +1,8 @@
 {
-	"name": "@tickety/discord-components-core",
+	"name": "@ticketylabs/discord-components-core",
 	"version": "4.0.2",
 	"description": "Web components to easily build and display fake Discord messages on your webpages.",
-	"author": "@tickety",
+	"author": "@ticketylabs",
 	"license": "MIT",
 	"main": "dist/index.js",
 	"module": "dist/index.js",

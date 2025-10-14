@@ -126,7 +126,7 @@ export class AppComponent {}
 React is currently the only library among the "big" libraries for frontend
 development that does not fully support custom elements / webcomponents yet (see
 [this React documentation page for more info](https://react.dev/reference/react-dom/components#custom-html-elements)).
-For this reason we ship the package `@tickety/discord-components-react`.
+For this reason we ship the package `@ticketylabs/discord-components-react`.
 
 We sincerely hope that this situation will improve in the future, but no one
 knows what their plans are.
@@ -301,12 +301,12 @@ that the browser can support. The live demo below uses Vite.
 
 This library uses a custom object on the browser `window` for configuration.
 Under normal circumstances by simply importing the package (with
-`import '@tickety/discord-components-core'`) the module augmentations should
+`import '@ticketylabs/discord-components-core'`) the module augmentations should
 also be loaded. If for whatever reason this does not happen, then you can define
 them manually yourself. You can do so with the following code snippet:
 
 ```ts
-import type { DiscordMessageOptions } from '@tickety/discord-components-core';
+import type { DiscordMessageOptions } from '@ticketylabs/discord-components-core';
 
 declare global {
   // eslint-disable-next-line no-var
@@ -331,7 +331,7 @@ The current avatar shortcut strings available are "blue" (default), "gray",
 
 If you want to add to or override the shortcuts, you can set them via
 `globalThis.$discordMessage.avatars` or by using the `setConfig` function
-(`import { setConfig } from '@tickety/discord-components-core'`).
+(`import { setConfig } from '@ticketylabs/discord-components-core'`).
 
 ```ts
 globalThis.$discordMessage = {
@@ -344,7 +344,7 @@ globalThis.$discordMessage = {
 ```
 
 ```ts
-import { setConfig } from '@tickety/discord-components-core';
+import { setConfig } from '@ticketylabs/discord-components-core';
 
 setConfig({
   avatars: {
@@ -360,7 +360,7 @@ setConfig({
 Sometimes you'll want to use the same message data across multiple messages. You
 can do so by providing an object of profiles in
 `globalThis.$discordMessage.profiles` or by using the `setConfig` function
-(`import { setConfig } from '@tickety/discord-components-core'`).
+(`import { setConfig } from '@ticketylabs/discord-components-core'`).
 
 ```ts
 globalThis.$discordMessage = {
@@ -382,7 +382,7 @@ globalThis.$discordMessage = {
 ```
 
 ```ts
-import { setConfig } from '@tickety/discord-components-core';
+import { setConfig } from '@ticketylabs/discord-components-core';
 
 setConfig({
   profiles: {

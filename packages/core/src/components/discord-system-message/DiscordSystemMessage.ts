@@ -120,7 +120,7 @@ export class DiscordSystemMessage extends LitElement implements LightTheme {
 		}
 
 		:host(:hover) {
-			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.0784314);
+			background-color: oklab(0.678888 0.00325716 -0.011175 / 0.0784314)
 		}
 
 		:host([light-theme]:hover) {

@@ -11,31 +11,31 @@ export class DiscordSpoiler extends LitElement implements LightTheme {
 	 */
 	public static override readonly styles = css`
 		:host {
-			background-color: #202225;
+			background-color: oklab(0.51633 0.00309466 -0.0153829);
 			border-radius: 3px;
 			color: transparent;
 			cursor: pointer;
 		}
 
 		:host([light-theme]) {
-			background-color: #c4c9ce;
+			background-color: oklab(0.658317 0.00215647 -0.0116118);
 		}
 
 		:host(:hover) {
-			background-color: rgba(32, 34, 37, 0.8);
+			background-color: oklab(0.621753 0.00217843 -0.0117759);
 		}
 
 		:host([light-theme]:hover) {
-			background-color: #cfd3d7;
+			background-color: oklab(0.550751 0.00264829 -0.0136494);
 		}
 
 		:host([activated]) {
 			color: inherit;
-			background-color: hsla(0, 0%, 100%, 0.1);
+			background-color: rgba(151, 151, 159, 0.08);
 		}
 
 		:host([light-theme][activated]) {
-			background-color: #e5e5e5;
+			background-color: rgba(151, 151, 159, 0.12);
 		}
 	`;
 

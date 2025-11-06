@@ -278,6 +278,17 @@ export class DiscordMessage extends LitElement implements LightTheme {
 	public accessor avatar: string | undefined = undefined;
 
 	/**
+	 * Triggered when the message author's avatar fails to load.
+	 * If not provided, nothing will happen on error.
+	 */
+	@property({ attribute: false })
+	public accessor onAvatarError: (imgEl: HTMLImageElement) => void;
+
+	private handleAvatarError(event: Event): void {
+		this.onAvatarError?.(event.currentTarget as HTMLImageElement);
+	}
+
+	/**
 	 * Whether the message author is a bot or not.
 	 * Only works if `server` and `officialApp` is `false` or `undefined`.
 	 */
@@ -470,7 +481,7 @@ export class DiscordMessage extends LitElement implements LightTheme {
 					() => null,
 					() =>
 						html`<div class="discord-author-avatar">
-							<img src="${ifDefined(profile.avatar)}" alt="${ifDefined(profile.author)}" />
+							<img src="${ifDefined(profile.avatar)}" alt="${ifDefined(profile.author)}" @error=${this.handleAvatarError} />
 						</div>`
 				)}
 

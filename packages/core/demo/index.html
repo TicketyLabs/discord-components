@@ -1355,6 +1355,146 @@
 						</discord-unordered-list>
 					</discord-message>
 				</discord-messages>
+				<h3 class="title">Components v2 (Embed v2) examples</h3>
+				<h4 class="subtitle">Basic container with text, thumbnail and sections</h4>
+				<discord-messages>
+					<discord-message profile="skyra">
+						<discord-container color="#5865F2">
+							<discord-text-display>Announcement</discord-text-display>
+							<discord-text-display>Introducing Embed v2 components</discord-text-display>
+							<discord-text-display
+								>These components let you compose rich embed-like layouts directly inside a message.</discord-text-display
+							>
+							<discord-separator></discord-separator>
+							<discord-section>
+								<discord-text-display>• Use <discord-code>discord-container</discord-code> to wrap content.</discord-text-display>
+								<discord-text-display>• Arrange content with <discord-code>discord-section</discord-code>.</discord-text-display>
+								<discord-text-display
+									>• Add text with <discord-code>discord-text-display</discord-code> components.</discord-text-display
+								>
+								<discord-text-display>• Divide areas with <discord-code>discord-separator</discord-code>.</discord-text-display>
+							</discord-section>
+							<discord-section>
+								<discord-text-display>Thumbnail in accessory slot:</discord-text-display>
+								<discord-thumbnail
+									slot="accessory"
+									url="https://raw.githubusercontent.com/skyra-project/discord-components-implementations/main/shared/public/sapphire.png"
+									alt="Sapphire logo"
+								></discord-thumbnail>
+							</discord-section>
+						</discord-container>
+					</discord-message>
+				</discord-messages>
+
+				<h4 class="subtitle">Media gallery inside a container</h4>
+				<discord-messages>
+					<discord-message profile="favna">
+						<discord-container>
+							<discord-text-display>Gallery</discord-text-display>
+							<discord-text-display>A few pictures displayed in a responsive grid.</discord-text-display>
+							<discord-media-gallery>
+								<img
+									src="https://raw.githubusercontent.com/skyra-project/discord-components-implementations/main/shared/public/lit.png"
+									alt="Lit"
+								/>
+								<img
+									src="https://raw.githubusercontent.com/skyra-project/discord-components-implementations/main/shared/public/dragonite.png"
+									alt="Dragonite"
+								/>
+								<img
+									src="https://raw.githubusercontent.com/skyra-project/discord-components-implementations/main/shared/public/sapphire.png"
+									alt="Sapphire"
+								/>
+							</discord-media-gallery>
+						</discord-container>
+					</discord-message>
+				</discord-messages>
+
+				<h4 class="subtitle">Light theme variant with thumbnail in accessory slot</h4>
+				<discord-messages light-theme>
+					<discord-message profile="skyra">
+						<discord-container light-theme color="#5865F2">
+							<discord-text-display>Light theme container</discord-text-display>
+							<discord-text-display
+								>This block demonstrates the light theme and a thumbnail in the accessory slot.</discord-text-display
+							>
+							<discord-separator></discord-separator>
+							<discord-section>
+								<discord-text-display>Flex layout adapts to available width.</discord-text-display>
+								<discord-text-display>Great for small highlights.</discord-text-display>
+								<discord-text-display>Easy to mix and match.</discord-text-display>
+								<discord-thumbnail
+									slot="accessory"
+									size="large"
+									url="https://raw.githubusercontent.com/skyra-project/discord-components-implementations/main/shared/public/sapphire.png"
+									alt="Sapphire logo"
+								></discord-thumbnail>
+							</discord-section>
+						</discord-container>
+					</discord-message>
+				</discord-messages>
+
+				<h4 class="subtitle">Container without color (components v2 style)</h4>
+				<discord-messages>
+					<discord-message profile="skyra">
+						<discord-container>
+							<discord-text-display>Simple Container</discord-text-display>
+							<discord-text-display
+								>This container has no color, so it renders as a rounded box with a thin outline.</discord-text-display
+							>
+							<discord-separator></discord-separator>
+							<discord-section>
+								<discord-text-display>Perfect for simple layouts</discord-text-display>
+								<discord-text-display>Clean and minimal design</discord-text-display>
+							</discord-section>
+						</discord-container>
+					</discord-message>
+				</discord-messages>
+
+				<h4 class="subtitle">Spoiler functionality</h4>
+				<discord-messages>
+					<discord-message profile="skyra">
+						<discord-container spoiler>
+							<discord-text-display>Spoiler Container</discord-text-display>
+							<discord-text-display>This entire container is spoilered! Click to reveal.</discord-text-display>
+						</discord-container>
+					</discord-message>
+				</discord-messages>
+
+				<discord-messages>
+					<discord-message profile="skyra">
+						<discord-container>
+							<discord-text-display>Spoiler Thumbnail</discord-text-display>
+							<discord-section>
+								<discord-text-display>This thumbnail is spoilered:</discord-text-display>
+								<discord-thumbnail
+									slot="accessory"
+									spoiler
+									url="https://raw.githubusercontent.com/skyra-project/discord-components-implementations/main/shared/public/sapphire.png"
+									alt="Spoiler image"
+								></discord-thumbnail>
+							</discord-section>
+						</discord-container>
+					</discord-message>
+				</discord-messages>
+
+				<discord-messages>
+					<discord-message profile="skyra">
+						<discord-container>
+							<discord-text-display>Spoiler Media Gallery</discord-text-display>
+							<discord-media-gallery spoiler>
+								<img
+									src="https://raw.githubusercontent.com/skyra-project/discord-components-implementations/main/shared/public/lit.png"
+									alt="Lit"
+								/>
+								<img
+									src="https://raw.githubusercontent.com/skyra-project/discord-components-implementations/main/shared/public/sapphire.png"
+									alt="Sapphire"
+								/>
+							</discord-media-gallery>
+						</discord-container>
+					</discord-message>
+				</discord-messages>
 			</main>
 		</div>
 	</body>

@@ -6,12 +6,13 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { when } from 'lit/directives/when.js';
 import '../discord-link/DiscordLink.js';
 import type { LightTheme } from '../../types.js';
+import { SpoilerMixin } from '../../util/spoiler.js';
 import { messagesLightTheme } from '../discord-messages/DiscordMessages.js';
 import AttachmentDownloadButton from '../svgs/AttachmentDownloadButton.js';
 import FileAttachment from '../svgs/FileAttachment.js';
 
 @customElement('discord-file-attachment')
-export class DiscordFileAttachment extends LitElement implements LightTheme {
+export class DiscordFileAttachment extends SpoilerMixin(LitElement) implements LightTheme {
 	/**
 	 * @internal
 	 */
@@ -65,6 +66,35 @@ export class DiscordFileAttachment extends LitElement implements LightTheme {
 			display: flex;
 			flex-direction: column;
 			position: relative;
+		}
+
+		.discord-file-attachment-non-visual-media-item-container[data-spoiler]:not([data-spoiler-revealed]) .discord-file-attachment-mosaic-style {
+			filter: blur(44px);
+		}
+
+		.spoiler-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.6);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			border-radius: 8px;
+		}
+
+		.spoiler-warning {
+			background-color: rgba(0, 0, 0, 0.9);
+			padding: 8px 12px;
+			border-radius: 100px;
+			font-size: 14px;
+			font-weight: 600;
+			color: white;
+			text-transform: uppercase;
+			pointer-events: none;
 		}
 
 		.discord-file-attachment-non-visual-media-item {
@@ -209,7 +239,11 @@ export class DiscordFileAttachment extends LitElement implements LightTheme {
 	public accessor lightTheme = false;
 
 	protected override render() {
-		return html`<div class="discord-file-attachment-non-visual-media-item-container">
+		return html`<div
+			class="discord-file-attachment-non-visual-media-item-container"
+			?data-spoiler=${this.spoiler}
+			?data-spoiler-revealed=${this.spoilerRevealed}
+		>
 			<div class="discord-file-attachment-non-visual-media-item">
 				<div class="discord-file-attachment-mosaic-item-media">
 					<div class=${classMap({ 'discord-file-attachment-mosaic-style': true, 'discord-file-attachment-light-theme': this.lightTheme })}>
@@ -236,6 +270,14 @@ export class DiscordFileAttachment extends LitElement implements LightTheme {
 					</div>
 				</div>
 			</div>
+			${when(
+				this.spoiler && !this.spoilerRevealed,
+				() => html`
+					<div class="spoiler-overlay" @click=${this.revealSpoiler} @keydown=${this.revealSpoiler}>
+						<span class="spoiler-warning">Spoiler</span>
+					</div>
+				`
+			)}
 			<div class="discord-button-download-attachment">
 				<a
 					class="discord-link-download-attachment"

@@ -13,7 +13,7 @@
 React is currently the only library among the "big" libraries for frontend
 development that does not fully support custom elements / webcomponents yet (see
 [this React documentation page for more info](https://react.dev/reference/react-dom/components#custom-html-elements)).
-For this reason we ship the package `@skyra/discord-components-react`.
+For this reason we ship the package `@ticketylabs/discord-components-react`.
 
 We sincerely hope that this situation will improve in the future, but no one
 knows what their plans are.

@@ -263,6 +263,17 @@ export class DiscordReply extends LitElement implements LightTheme {
 	public accessor avatar: string;
 
 	/**
+	 * Triggered when the message author's avatar fails to load.
+	 * If not provided, nothing will happen on error.
+	 */
+	@property({ attribute: false })
+	public accessor onAvatarError: (imgEl: HTMLImageElement) => void;
+
+	private handleAvatarError(event: Event): void {
+		this.onAvatarError?.(event.currentTarget as HTMLImageElement);
+	}
+
+	/**
 	 * Whether the message author is a bot or not.
 	 * Only works if `server` and `officialApp` is `false` or `undefined`.
 	 */
@@ -410,7 +421,13 @@ export class DiscordReply extends LitElement implements LightTheme {
 		return html`${when(
 			this.compactMode || this.deleted,
 			() => html`<div class="discord-reply-badge">${ReplyIcon()}</div>`,
-			() => html`<img class="discord-replied-message-avatar" src="${ifDefined(profile.avatar)}" alt="${ifDefined(profile.author)}" />`
+			() =>
+				html`<img
+					class="discord-replied-message-avatar"
+					src="${ifDefined(profile.avatar)}"
+					alt="${ifDefined(profile.author)}"
+					@error=${this.handleAvatarError}
+				/>`
 		)}
 		${when(
 			this.deleted,

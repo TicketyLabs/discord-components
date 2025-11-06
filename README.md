@@ -7,22 +7,22 @@
 **Web components to easily build and display fake Discord messages on your
 webpages**
 
-[![License](https://img.shields.io/github/license/skyra-project/discord-components?logo=github&maxAge=3600&style=flat-square)](https://github.com/skyra-project/discord-components/blob/main/LICENSE.md)
+[![License](https://img.shields.io/github/license/ticketylabs/discord-components?logo=github&maxAge=3600&style=flat-square)](https://github.com/ticketylabs/discord-components/blob/main/LICENSE.md)
 [![Patreon](https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon)](https://donate.skyra.pw/patreon)
 
 _Core Package_
 
-[![npm](https://img.shields.io/npm/v/@skyra/discord-components-core?color=crimson&logo=npm&style=flat-square&label=@skyra/discord-components-core)](https://www.npmjs.com/package/@skyra/discord-components-core)
-[![npm](https://img.shields.io/npm/dt/@skyra/discord-components-core.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@skyra/discord-components-core)
-[![npm](https://img.shields.io/bundlephobia/min/@skyra/discord-components-core?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@skyra/discord-components-core)
+[![npm](https://img.shields.io/npm/v/@ticketylabs/discord-components-core?color=crimson&logo=npm&style=flat-square&label=@ticketylabs/discord-components-core)](https://www.npmjs.com/package/@ticketylabs/discord-components-core)
+[![npm](https://img.shields.io/npm/dt/@ticketylabs/discord-components-core.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@ticketylabs/discord-components-core)
+[![npm](https://img.shields.io/bundlephobia/min/@ticketylabs/discord-components-core?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@ticketylabs/discord-components-core)
 
 _React Bindings_
 
-[![npm](https://img.shields.io/npm/v/@skyra/discord-components-react?color=crimson&logo=npm&style=flat-square&label=@skyra/discord-components-react)](https://www.npmjs.com/package/@skyra/discord-components-react)
-[![npm](https://img.shields.io/npm/dt/@skyra/discord-components-react.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@skyra/discord-components-react)
-[![npm](https://img.shields.io/bundlephobia/min/@skyra/discord-components-react?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@skyra/discord-components-react)
+[![npm](https://img.shields.io/npm/v/@ticketylabs/discord-components-react?color=crimson&logo=npm&style=flat-square&label=@ticketylabs/discord-components-react)](https://www.npmjs.com/package/@ticketylabs/discord-components-react)
+[![npm](https://img.shields.io/npm/dt/@ticketylabs/discord-components-react.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@ticketylabs/discord-components-react)
+[![npm](https://img.shields.io/bundlephobia/min/@ticketylabs/discord-components-react?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@ticketylabs/discord-components-react)
 
-[![Support Server](https://discord.com/api/guilds/254360814063058944/embed.png?style=banner2)](https://join.skyra.pw)
+[![Support Server](https://discord.com/api/guilds/254360814063058944/embed.png?style=banner2)](https://discord.gg/ticketylabs-support)
 
 <!-- # HEADER END # -->
 
@@ -228,7 +228,7 @@ export class AppComponent {}
 React is currently the only library among the "big" libraries for frontend
 development that does not fully support custom elements / webcomponents yet (see
 [this React documentation page for more info](https://react.dev/reference/react-dom/components#custom-html-elements)).
-For this reason we ship the package `@skyra/discord-components-react`.
+For this reason we ship the package `@ticketylabs/discord-components-react`.
 
 We sincerely hope that this situation will improve in the future, but no one
 knows what their plans are.
@@ -403,12 +403,12 @@ that the browser can support. The live demo below uses Vite.
 
 This library uses a custom object on the browser `window` for configuration.
 Under normal circumstances by simply importing the package (with
-`import @skyra/discord-components-core`) the module augmentations should also be
-loaded. If for whatever reason this does not happen, then you can define them
-manually yourself. You can do so with the following code snippet:
+`import '@ticketylabs/discord-components-core'`) the module augmentations should
+also be loaded. If for whatever reason this does not happen, then you can define
+them manually yourself. You can do so with the following code snippet:
 
 ```ts
-import type { DiscordMessageOptions } from '@skyra/discord-components-core';
+import type { DiscordMessageOptions } from '@ticketylabs/discord-components-core';
 
 declare global {
   // eslint-disable-next-line no-var
@@ -433,7 +433,7 @@ The current avatar shortcut strings available are "blue" (default), "gray",
 
 If you want to add to or override the shortcuts, you can set them via
 `globalThis.$discordMessage.avatars` or by using the `setConfig` function
-(`import { setConfig } from '@skyra/discord-components-core'`).
+(`import { setConfig } from '@ticketylabs/discord-components-core'`).
 
 ```ts
 globalThis.$discordMessage = {
@@ -446,7 +446,7 @@ globalThis.$discordMessage = {
 ```
 
 ```ts
-import { setConfig } from '@skyra/discord-components-core';
+import { setConfig } from '@ticketylabs/discord-components-core';
 
 setConfig({
   avatars: {
@@ -462,7 +462,7 @@ setConfig({
 Sometimes you'll want to use the same message data across multiple messages. You
 can do so by providing an object of profiles in
 `globalThis.$discordMessage.profiles` or by using the `setConfig` function
-(`import { setConfig } from '@skyra/discord-components-core'`).
+(`import { setConfig } from '@ticketylabs/discord-components-core'`).
 
 ```ts
 globalThis.$discordMessage = {
@@ -484,7 +484,7 @@ globalThis.$discordMessage = {
 ```
 
 ```ts
-import { setConfig } from '@skyra/discord-components-core';
+import { setConfig } from '@ticketylabs/discord-components-core';
 
 setConfig({
   profiles: {

@@ -1,8 +1,8 @@
 {
-	"name": "@ticketylabs/discord-components-react",
+	"name": "discord-components-react",
 	"version": "4.0.2",
-	"description": "React bindings for @ticketylabs/discord-components-core",
-	"author": "@ticketylabs",
+	"description": "React bindings for discord-components-core",
+	"author": "ticketylabs",
 	"license": "MIT",
 	"main": "dist/cjs/index.cjs",
 	"module": "dist/esm/index.mjs",
@@ -26,14 +26,17 @@
 	"scripts": {
 		"build": "tsup && yarn build:rename-esm-index",
 		"build:rename-esm-index": "node scripts/rename-esm-index.mjs",
+		"bundle-core": "node scripts/bundle-core.mjs",
+		"restore-workspace": "node scripts/restore-package-json.mjs",
 		"typecheck": "tsc -p src/tsconfig.json --noEmit --incremental false",
-		"prepack": "yarn build",
+		"prepack": "yarn build && yarn bundle-core",
+		"postpack": "yarn restore-workspace",
 		"prepare": "yarn build"
 	},
 	"dependencies": {
 		"@lit/react": "^1.0.8",
-		"@ticketylabs/discord-components-core": "^4.0.2",
-		"react": "^19.1.0"
+		"react": "^19.1.0",
+		"discord-components-core": "workspace:^"
 	},
 	"devDependencies": {
 		"@types/react": "^19.0.0",
@@ -48,7 +51,9 @@
 	},
 	"files": [
 		"dist/",
-		"CHANGELOG.md"
+		"CHANGELOG.md",
+		"vendor/",
+		"postinstall.mjs"
 	],
 	"engines": {
 		"node": ">=v18"

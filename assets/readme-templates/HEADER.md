@@ -8,15 +8,15 @@ webpages**
 
 _Core Package_
 
-[![npm](https://img.shields.io/npm/v/@ticketylabs/discord-components-core?color=crimson&logo=npm&style=flat-square&label=@ticketylabs/discord-components-core)](https://www.npmjs.com/package/@ticketylabs/discord-components-core)
-[![npm](https://img.shields.io/npm/dt/@ticketylabs/discord-components-core.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@ticketylabs/discord-components-core)
-[![npm](https://img.shields.io/bundlephobia/min/@ticketylabs/discord-components-core?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@ticketylabs/discord-components-core)
+[![npm](https://img.shields.io/npm/v/discord-components-core?color=crimson&logo=npm&style=flat-square&label=discord-components-core)](https://www.npmjs.com/package/discord-components-core)
+[![npm](https://img.shields.io/npm/dt/discord-components-core.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/discord-components-core)
+[![npm](https://img.shields.io/bundlephobia/min/discord-components-core?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=discord-components-core)
 
 _React Bindings_
 
-[![npm](https://img.shields.io/npm/v/@ticketylabs/discord-components-react?color=crimson&logo=npm&style=flat-square&label=@ticketylabs/discord-components-react)](https://www.npmjs.com/package/@ticketylabs/discord-components-react)
-[![npm](https://img.shields.io/npm/dt/@ticketylabs/discord-components-react.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/@ticketylabs/discord-components-react)
-[![npm](https://img.shields.io/bundlephobia/min/@ticketylabs/discord-components-react?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=@ticketylabs/discord-components-react)
+[![npm](https://img.shields.io/npm/v/discord-components-react?color=crimson&logo=npm&style=flat-square&label=discord-components-react)](https://www.npmjs.com/package/discord-components-react)
+[![npm](https://img.shields.io/npm/dt/discord-components-react.svg?maxAge=3600&logo=npm)](https://www.npmjs.com/package/discord-components-react)
+[![npm](https://img.shields.io/bundlephobia/min/discord-components-react?label=minified&logo=webpack&maxAge=3600)](https://bundlephobia.com/result?p=discord-components-react)
 
 [![Support Server](https://discord.com/api/guilds/254360814063058944/embed.png?style=banner2)](https://discord.gg/ticketylabs-support)
 

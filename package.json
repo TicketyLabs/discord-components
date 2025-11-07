@@ -21,7 +21,8 @@
 		"build": "yarn clean && yarn build:core && yarn build:react && yarn lint && yarn format",
 		"build:core": "yarn print 'building core' && yarn workspace discord-components-core build",
 		"build:react": "yarn print 'building react' && yarn workspace discord-components-react build",
-		"build:documentation": "yarn workspace documentation build"
+		"build:documentation": "yarn workspace documentation build",
+		"pack:all": "cd packages/react && yarn pack && cd ../core && yarn pack"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^20.1.0",

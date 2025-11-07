@@ -26,26 +26,24 @@
 	"scripts": {
 		"build": "tsup && yarn build:rename-esm-index",
 		"build:rename-esm-index": "node scripts/rename-esm-index.mjs",
-		"bundle-core": "node scripts/bundle-core.mjs",
-		"restore-workspace": "node scripts/restore-package-json.mjs",
 		"typecheck": "tsc -p src/tsconfig.json --noEmit --incremental false",
-		"prepack": "yarn build && yarn bundle-core",
-		"postpack": "yarn restore-workspace",
+		"prepack": "yarn build",
 		"prepare": "yarn build"
 	},
 	"dependencies": {
 		"@lit/react": "^1.0.8",
-		"react": "^19.1.0",
-		"discord-components-core": "workspace:^"
+		"react": "^19.1.0"
 	},
 	"devDependencies": {
 		"@types/react": "^19.0.0",
 		"colorette": "^2.0.20",
 		"rimraf": "^6.1.0",
 		"tsup": "^8.5.0",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"discord-components-core": "workspace:^"
 	},
 	"peerDependencies": {
+		"discord-components-core": "^4.0.2",
 		"react": "16.8.x || 17.x || 18.x || 19.x",
 		"react-dom": "16.8.x || 17.x || 18.x || 19.x"
 	},
